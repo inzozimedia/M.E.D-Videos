@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Movie Gallery</title>
+  <title>M.E.D Movies</title>
   <style>
     body {
       font-family: 'Arial', sans-serif;
@@ -51,7 +51,6 @@
       cursor: pointer;
       font-size: 16px;
       transition: background-color 0.3s;
-      display: none;
     }
 
     #logout-button:hover {
@@ -63,30 +62,8 @@
       max-width: 1200px;
       margin: 0 auto;
       display: flex;
-    }
-
-    #social-media {
-      position: fixed;
-      left: 10px;
-      top: 50%;
-      transform: translateY(-50%);
-      display: flex;
       flex-direction: column;
-      gap: 10px;
-    }
-
-    #social-media a {
-      display: block;
-    }
-
-    #social-media img {
-      width: 40px;
-      height: 40px;
-      transition: opacity 0.3s;
-    }
-
-    #social-media img:hover {
-      opacity: 0.7;
+      align-items: center;
     }
 
     #search {
@@ -105,19 +82,19 @@
     }
 
     .movie {
-      width: 240px; /* Fixed width */
-      height: 240px; /* Fixed height */
+      width: 240px; /* Fixed width for PC */
       cursor: pointer;
       transition: transform 0.3s, box-shadow 0.3s;
       border-radius: 10px;
       overflow: hidden;
-      text-align: center;
+      text-align: center; /* Center align text */
     }
 
     .movie img {
       width: 100%;
-      height: 100%;
-      object-fit: cover; /* Ensure the image covers the box */
+      height: 240px; /* Fixed height */
+      object-fit: cover;
+      border-bottom: 4px solid #1c1c1c;
     }
 
     .movie p {
@@ -183,27 +160,6 @@
     .signup-form button:hover {
       background-color: #333;
     }
-
-    @media (max-width: 1200px) {
-      .movie {
-        width: 240px; /* Fixed width */
-        height: 240px; /* Fixed height */
-      }
-    }
-
-    @media (max-width: 768px) {
-      .movie {
-        width: 240px; /* Fixed width */
-        height: 240px; /* Fixed height */
-      }
-    }
-
-    @media (max-width: 480px) {
-      .movie {
-        width: 240px; /* Fixed width */
-        height: 240px; /* Fixed height */
-      }
-    }
   </style>
 </head>
 <body>
@@ -241,7 +197,16 @@
     <div id="movies-container" class="movies-container">
       <input type="text" id="search" placeholder="Search movies...">
       <div id="movies-list">
-        <!-- Movie posters will be inserted here -->
+        <!-- Example Movie Posters -->
+        <a href="video 1.html" class="movie">
+          <img src="image/deadpool&wolverine.png" alt="video 1.html">
+          <p>Deadpool & Wolverin</p>
+        </a>
+        <a href="movie2.html" class="movie">
+          <img src="https://via.placeholder.com/240" alt="Movie 2">
+          <p>Movie 2</p>
+        </a>
+        <!-- Add more movie posters as needed -->
       </div>
     </div>
   </main>
@@ -249,8 +214,8 @@
   <script>
     // Dummy movie data
     const movies = [
-      { title: 'Deadpool & Wolverine', img: 'image/deadpool&wolverine.png', url: 'video 1.html' },
-      { title: 'Movie 2', img: 'image/movie2.png', url: 'movie2.html' },
+      { title: 'Deadpool & Wolverine', img: 'image/deadpool&wolverine.png', url: 'deadpool-wolverine.html' },
+      { title: 'Movie 2', img: 'https://via.placeholder.com/240', url: 'movie2.html' },
       // Add more movies as needed
     ];
 
@@ -277,20 +242,6 @@
         document.getElementById('movies-container').classList.add('show');
         document.getElementById('logout-button').style.display = 'inline';
 
-        // Display movies
-        const moviesList = document.getElementById('movies-list');
-        movies.forEach(movie => {
-          const movieElement = document.createElement('div');
-          movieElement.className = 'movie';
-          movieElement.innerHTML = `
-            <a href="${movie.url}">
-              <img src="${movie.img}" alt="${movie.title}">
-              <p>${movie.title}</p>
-            </a>
-          `;
-          moviesList.appendChild(movieElement);
-        });
-
         // Search functionality
         const searchInput = document.getElementById('search');
         searchInput.addEventListener('input', () => {
@@ -306,7 +257,7 @@
           });
         });
 
-        // Logout handling
+        // Logout button
         document.getElementById('logout-button').addEventListener('click', () => {
           clearUser();
           window.location.reload();
@@ -315,14 +266,19 @@
       } else {
         document.getElementById('signup-form').classList.add('show');
         document.getElementById('movies-container').classList.remove('show');
+      }
 
-        // Signup form handling
-        const signupForm = document.getElementById('form-signup');
-        signupForm.addEventListener('submit', (e) => {
+      // Sign-Up form
+      if (document.getElementById('form-signup')) {
+        document.getElementById('form-signup').addEventListener('submit', (e) => {
           e.preventDefault();
           const username = document.getElementById('signup-username').value;
-          setUser(username);
-          window.location.reload();
+          const password = document.getElementById('signup-password').value;
+
+          if (username && password) {
+            setUser(username);
+            window.location.reload();
+          }
         });
       }
     });

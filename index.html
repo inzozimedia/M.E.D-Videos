@@ -215,7 +215,7 @@
   <main>
     <div id="social-media">
       <a href="https://www.instagram.com" target="_blank">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="https://www.instagram.com/inzozi_media_/#">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
       </a>
       <a href="https://wa.me/" target="_blank">
         <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
@@ -246,18 +246,8 @@
   <script>
     // Dummy movie data
     const movies = [
-      { title: 'Deadpool & Wolverine', img: ' ', url: 'deadpool-wolverine.html' },
-      { title: 'Movie 2', img: 'https://via.placeholder.com/270', url: '/video 1.html' },
-      { title: 'Movie 3', img: 'https://via.placeholder.com/270', url: 'movie2.html' },
-      { title: 'Deadpool & Wolverine', img: ' ', url: 'deadpool-wolverine.html' },
-      { title: 'Movie 2', img: 'https://via.placeholder.com/270', url: '/video 1.html' },
-      { title: 'Movie 3', img: 'https://via.placeholder.com/270', url: 'movie2.html' },
-      { title: 'Deadpool & Wolverine', img: ' ', url: 'deadpool-wolverine.html' },
-      { title: 'Movie 2', img: 'https://via.placeholder.com/270', url: '/video 1.html' },
-      { title: 'Movie 3', img: 'https://via.placeholder.com/270', url: 'movie2.html' },
-      { title: 'Deadpool & Wolverine', img: ' ', url: 'deadpool-wolverine.html' },
-      { title: 'Movie 2', img: 'https://via.placeholder.com/270', url: '/video 1.html' },
-      { title: 'Movie 3', img: 'https://via.placeholder.com/270', url: 'movie2.html' },
+      { title: 'Deadpool & Wolverine', img: 'image/deadpool&wolverine.png', url: 'deadpool-wolverine.html' },
+      { title: 'Welcome', img: 'https://via.placeholder.com/270', url: 'video 1.html' },
       // Add more movies as needed
     ];
 
@@ -294,7 +284,7 @@
             <p>${movie.title}</p>
           `;
           movieElement.addEventListener('click', () => {
-            window.location.href = movie.url;
+            window.location.href = movie.url; // Opens the corresponding HTML file
           });
           moviesList.appendChild(movieElement);
         });
@@ -323,19 +313,14 @@
       } else {
         document.getElementById('signup-form').classList.add('show');
         document.getElementById('movies-container').classList.remove('show');
-      }
 
-      // Sign-Up form
-      if (document.getElementById('form-signup')) {
-        document.getElementById('form-signup').addEventListener('submit', (e) => {
+        // Signup form handling
+        const signupForm = document.getElementById('form-signup');
+        signupForm.addEventListener('submit', (e) => {
           e.preventDefault();
           const username = document.getElementById('signup-username').value;
-          const password = document.getElementById('signup-password').value;
-
-          if (username && password) {
-            setUser(username);
-            window.location.reload();
-          }
+          setUser(username);
+          window.location.reload();
         });
       }
     });

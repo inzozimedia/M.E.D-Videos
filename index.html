@@ -1,339 +1,269 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tutorial's</title>
-  <style>
-    body {
-      font-family: 'Arial', sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f0f2f5;
-      color: #333;
-    }
-
-    header {
-      background-color: #1c1c1c;
-      color: #fff;
-      padding: 15px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    }
-
-    #title {
-      font-size: 24px;
-      font-weight: bold;
-    }
-
-    #title span {
-      color: #e74c3c; /* Red color for 'Videos' */
-    }
-
-    #user-info {
-      display: flex;
-      align-items: center;
-    }
-
-    #username {
-      font-size: 18px;
-      margin-right: 15px;
-    }
-
-    #logout-button {
-      background-color: #e74c3c;
-      color: #fff;
-      border: none;
-      padding: 8px 15px;
-      border-radius: 5px;
-      cursor: pointer;
-      font-size: 16px;
-      transition: background-color 0.3s;
-      display: none;
-    }
-
-    #logout-button:hover {
-      background-color: #c0392b;
-    }
-
-    main {
-      padding: 20px;
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-    }
-
-    #social-media {
-      position: fixed;
-      left: 10px;
-      top: 50%;
-      transform: translateY(-50%);
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-
-    #social-media a {
-      display: block;
-    }
-
-    #social-media img {
-      width: 40px;
-      height: 40px;
-      transition: opacity 0.3s;
-    }
-
-    #social-media img:hover {
-      opacity: 0.7;
-    }
-
-    #search {
-      width: 100%;
-      padding: 12px;
-      border-radius: 5px;
-      border: 1px solid #ddd;
-      margin-bottom: 20px;
-      font-size: 16px;
-    }
-
-    #movies-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
-
-    .movie {
-      width: 270px; /* Fixed width for PC */
-      cursor: pointer;
-      transition: transform 0.3s, box-shadow 0.3s;
-      border-radius: 10px;
-      overflow: hidden;
-      text-align: center; /* Center align text */
-    }
-
-    .movie a {
-      display: block;
-      text-decoration: none;
-      color: inherit;
-    }
-
-    .movie img {
-      width: 100%;
-      height: 270px; /* Fixed height */
-      object-fit: cover;
-      border-bottom: 4px solid #1c1c1c;
-    }
-
-    .movie p {
-      margin: 10px 0 0;
-      font-size: 16px;
-      color: #333;
-    }
-
-    .movie:hover {
-      transform: scale(1.05);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-    }
-
-    .signup-form, .movies-container {
-      display: none;
-    }
-
-    .show {
-      display: block;
-    }
-
-    .signup-form {
-      max-width: 400px;
-      margin: 0 auto;
-      padding: 20px;
-      background: #fff;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    }
-
-    .signup-form h2 {
-      margin-bottom: 20px;
-      font-size: 24px;
-    }
-
-    .signup-form label {
-      display: block;
-      margin-bottom: 8px;
-      font-size: 16px;
-    }
-
-    .signup-form input {
-      width: 100%;
-      padding: 10px;
-      border-radius: 5px;
-      border: 1px solid #ddd;
-      margin-bottom: 20px;
-      font-size: 16px;
-    }
-
-    .signup-form button {
-      width: 100%;
-      padding: 10px;
-      border-radius: 5px;
-      border: none;
-      background-color: #1c1c1c;
-      color: #fff;
-      font-size: 18px;
-      cursor: pointer;
-      transition: background-color 0.3s;
-    }
-
-    .signup-form button:hover {
-      background-color: #333;
-    }
-
-    @media (max-width: 1200px) {
-      .movie {
-        width: 270px; /* Keep the width consistent */
-      }
-    }
-
-    @media (max-width: 768px) {
-      .movie {
-        width: 270px; /* Keep the width consistent */
-      }
-    }
-
-    @media (max-width: 480px) {
-      .movie {
-        width: 270px; /* Keep the width consistent */
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M.E.D videos</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: white;
+            color: black;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: black;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        header h1 {
+            color: white;
+            font-size: 24px;
+            margin: 0;
+        }
+        header h1 span.red {
+            color: red;
+        }
+        .username {
+            color: white;
+            font-size: 18px;
+            margin-right: 20px;
+        }
+        .logout-button {
+            background-color: red;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .logout-button:hover {
+            background-color: darkred;
+        }
+        .search-container {
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+            background-color: #f1f1f1;
+            animation: fadeIn 1s ease-in-out;
+        }
+        .search-container input[type="text"] {
+            width: 50%;
+            padding: 10px;
+            font-size: 16px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+        .search-container input[type="text"]:focus {
+            border-color: red;
+            box-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
+        }
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, 220px);
+            gap: 20px;
+            padding: 20px;
+            margin-left: 100px; /* Pushed the grid a bit to the right side */
+            animation: slideInUp 1s ease-in-out;
+        }
+        .video-grid img {
+            width: 220px;
+            height: 220px;
+            object-fit: cover;
+            cursor: pointer;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+        }
+        .video-grid img:hover {
+            transform: scale(1.05);
+            border-color: red;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+        .social-media {
+            position: fixed;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .social-media a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: #eee;
+            border-radius: 50%;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .social-media a:hover {
+            background-color: #ddd;
+            transform: scale(1.1);
+        }
+        .social-media img {
+            width: 24px;
+            height: 24px;
+        }
+        #signup-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: black;
+            color: white;
+            animation: fadeIn 1s ease-in-out;
+        }
+        #signup-box {
+            background-color: white;
+            color: black;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+            animation: bounceIn 1s ease-in-out;
+            width: 300px;
+        }
+        #signup-box input[type="text"], #signup-box input[type="password"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin: 10px 0;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+        }
+        #signup-box button {
+            padding: 10px 20px;
+            background-color: red;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        #signup-box button:hover {
+            background-color: darkred;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideInUp {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        @keyframes bounceIn {
+            0%, 20%, 40%, 60%, 80%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <div id="title">M.E.D <span>Videos</span></div>
-    <div id="user-info">
-      <span id="username">Guest</span>
-      <button id="logout-button">Logout</button>
-    </div>
-  </header>
 
-  <main>
-    <div id="social-media">
-      <a href="https://www.instagram.com" target="_blank">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
-      </a>
-      <a href="https://wa.me/" target="_blank">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-      </a>
+<div id="signup-container">
+    <div id="signup-box">
+        <h2>Sign Up</h2>
+        <input type="text" id="name" placeholder="Enter your name">
+        <input type="password" id="password" placeholder="Enter your password">
+        <button onclick="signUp()">Sign Up</button>
+    </div>
+</div>
+
+<div id="site-content" style="display:none;">
+    <header>
+        <h1><span class="white">M.E.D</span> <span class="red">videos</span></h1>
+        <div class="username" id="usernameDisplay"></div>
+        <button class="logout-button" onclick="logOut()">Log Out</button>
+    </header>
+
+    <div class="search-container">
+        <input type="text" id="searchInput" placeholder="Search for videos..." onkeyup="filterVideos()">
     </div>
 
-    <div id="signup-form" class="signup-form">
-      <h2>Sign Up</h2>
-      <form id="form-signup">
-        <label for="signup-username">Username:</label>
-        <input type="text" id="signup-username" required>
+    <div class="video-grid" id="videoGrid">
+        <img src="video1.jpg" alt="Video 1" data-title="Video 1" onclick="openVideo('video1.html')">
+        <img src="video2.jpg" alt="Video 2" data-title="Video 2" onclick="openVideo('video2.html')">
+        <img src="video3.jpg" alt="Video 3" data-title="Video 3" onclick="openVideo('video3.html')">
+        <img src="video4.jpg" alt="Video 4" data-title="Video 4" onclick="openVideo('video4.html')">
+    </div>
+
+    <div class="social-media">
+        <a href="#" onclick="openSocial('https://www.instagram.com')"><img src="instagram-icon.png" alt="Instagram"></a>
+        <a href="#" onclick="openSocial('https://www.whatsapp.com')"><img src="whatsapp-icon.png" alt="WhatsApp"></a>
+        <a href="#" onclick="openSocial('https://www.x.com')"><img src="x-icon.png" alt="X"></a>
+    </div>
+</div>
+
+<script>
+    // Sign up functionality
+    function signUp() {
+        const name = document.getElementById('name').value;
+        const password = document.getElementById('password').value;
+        if (name && password) {
+            localStorage.setItem('user', name);
+            localStorage.setItem('password', password);
+            document.getElementById('usernameDisplay').textContent = name;
+            document.getElementById('signup-container').style.display = 'none';
+            document.getElementById('site-content').style.display = 'block';
+        } else {
+            alert("Please enter both name and password.");
+        }
+    }
+
+    // Show site content if user already signed up
+    window.onload = function() {
+        const user = localStorage.getItem('user');
+        if (user) {
+            document.getElementById('usernameDisplay').textContent = user;
+            document.getElementById('signup-container').style.display = 'none';
+            document.getElementById('site-content').style.display = 'block';
+        }
+    };
+
+    // Function to open video in its own HTML page
+    function openVideo(videoPage) {
+        window.location.href = videoPage;
+    }
+
+    // Function to handle social media icon interactions
+    function openSocial(url) {
+        window.open(url, '_blank');
+    }
+
+    // Filter videos based on search input
+    function filterVideos() {
+        const input = document.getElementById('searchInput').value.toLowerCase();
+        const videoGrid = document.getElementById('videoGrid');
+        const videos = videoGrid.getElementsByTagName('img');
         
-        <label for="signup-password">Password:</label>
-        <input type="password" id="signup-password" required>
-        
-        <button type="submit">Sign Up</button>
-      </form>
-    </div>
-
-    <div id="movies-container" class="movies-container">
-      <input type="text" id="search" placeholder="Search movies...">
-      <div id="movies-list">
-        <!-- Movie posters will be inserted here -->
-      </div>
-    </div>
-  </main>
-
-  <script>
-    // Dummy movie data
-    const movies = [
-      { title: 'Testing', img: 'image/deadpool&wolverine.png', url: 'deadpool-wolverine.html' },
-      { title: 'Movie 2', img: 'image/movie2.png', url: 'video 1.html' },
-      // Add more movies as needed
-    ];
-
-    // Utility functions
-    function getUser() {
-      return JSON.parse(localStorage.getItem('user'));
-    }
-
-    function setUser(username) {
-      localStorage.setItem('user', JSON.stringify({ username }));
-    }
-
-    function clearUser() {
-      localStorage.removeItem('user');
-    }
-
-    // Page initialization
-    document.addEventListener('DOMContentLoaded', () => {
-      const user = getUser();
-
-      if (user) {
-        document.getElementById('username').textContent = user.username;
-        document.getElementById('signup-form').classList.remove('show');
-        document.getElementById('movies-container').classList.add('show');
-        document.getElementById('logout-button').style.display = 'inline';
-
-        // Display movies
-        const moviesList = document.getElementById('movies-list');
-        movies.forEach(movie => {
-          const movieElement = document.createElement('div');
-          movieElement.className = 'movie';
-          movieElement.innerHTML = `
-            <a href="${movie.url}">
-              <img src="${movie.img}" alt="${movie.title}">
-              <p>${movie.title}</p>
-            </a>
-          `;
-          moviesList.appendChild(movieElement);
-        });
-
-        // Search functionality
-        const searchInput = document.getElementById('search');
-        searchInput.addEventListener('input', () => {
-          const searchTerm = searchInput.value.toLowerCase();
-          const movies = document.querySelectorAll('.movie');
-          movies.forEach(movie => {
-            const title = movie.querySelector('p').textContent.toLowerCase();
-            if (title.includes(searchTerm)) {
-              movie.style.display = 'block';
+        for (let i = 0; i < videos.length; i++) {
+            const title = videos[i].getAttribute('data-title').toLowerCase();
+            if (title.includes(input)) {
+                videos[i].style.display = "";
             } else {
-              movie.style.display = 'none';
+                videos[i].style.display = "none";
             }
-          });
-        });
+        }
+    }
 
-        // Logout button
-        document.getElementById('logout-button').addEventListener('click', () => {
-          clearUser();
-          window.location.reload();
-        });
+    // Log out functionality
+    function logOut() {
+        localStorage.removeItem('user');
+        localStorage.removeItem('password');
+        document.getElementById('signup-container').style.display = 'flex';
+        document.getElementById('site-content').style.display = 'none';
+    }
+</script>
 
-      } else {
-        document.getElementById('signup-form').classList.add('show');
-        document.getElementById('movies-container').classList.remove('show');
-      }
-
-      // Sign-Up form
-      if (document.getElementById('form-signup')) {
-        document.getElementById('form-signup').addEventListener('submit', (e) => {
-          e.preventDefault();
-          const username = document.getElementById('signup-username').value;
-          const password = document.getElementById('signup-password').value;
-
-          if (username && password) {
-            setUser(username);
-            window.location.reload();
-          }
-        });
-      }
-    });
-  </script>
 </body>
 </html>

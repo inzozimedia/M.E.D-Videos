@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Application</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #1c1c1c;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+    }
+
+    header {
+      padding: 15px;
+      background-color: #333;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 24px;
+      color: #fff;
+      text-align: left;
+    }
+
+    main {
+      flex: 1;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    video {
+      width: 80%;
+      max-width: 900px;
+      height: auto;
+      border: 2px solid #fff;
+      margin-bottom: 20px;
+    }
+
+    #video-title {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      text-align: left;
+      width: 80%;
+    }
+
+    #description {
+      font-size: 16px;
+      margin-bottom: 20px;
+      text-align: left;
+      width: 80%;
+    }
+
+    #download-btn {
+      background-color: #e74c3c;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s;
+      align-self: flex-start;
+    }
+
+    #download-btn:hover {
+      background-color: #c0392b;
+    }
+
+    footer {
+      padding: 15px;
+      background-color: #333;
+      text-align: left;
+      width: 100%;
+    }
+
+    footer p {
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Application</h1>
+  </header>
+  <main>
+    <video id="video-player" controls>
+      <source src=" paste the link.mp4 " type="video/mp4">
+      Your browser does not support the video tag. <br>
+      Sorry your browser can't support this (M.E.D Videos)
+    </video>
+    <h2 id="video-title">add title here</h2>
+    <p id="description">write the description's</p>
+    <button id="download-btn">DOWNLOAD</button>
+  </main>
+  <footer>
+    <p>part of INZOZI MED WEB & created by MKB20/24</p>
+  </footer>
+  <script>
+    document.getElementById('download-btn').addEventListener('click', () => {
+      const videoUrl = ' paste hano link';
+      const link = document.createElement('a');
+      link.href = videoUrl;
+      link.download = 'paste the last session of the code'; // Specify the file name for the download
+      link.style.display = 'none'; // Hide the link
+      document.body.appendChild(link); // Append the link to the body
+      link.click(); // Simulate a click to start the download
+      document.body.removeChild(link); // Remove the link after download
+    });
+  </script>
+</body>
+</html>

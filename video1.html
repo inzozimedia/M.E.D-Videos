@@ -104,17 +104,17 @@
 </head>
 <body>
   <header>
-    <h1>? Application ?</h1>
+    <h1>Blender</h1>
   </header>
   <main>
     <div class="video-container">
       <video id="video-player" controls>
-        <source src="path/to/your/video.mp4" type="video/mp4">
+        <source src="https://github.com/inzozimedia/M.E.D-Videos/raw/main/video/orientation.mp4" type="video/mp4">
         Your browser does not support the video tag. <br>
         Sorry your browser can't support this (M.E.D Videos)
       </video>
-      <h2 id="video-title">Video Title</h2>
-      <p id="description">Video description goes here.</p>
+      <h2 id="video-title">Orientation of object's</h2>
+      <p id="description">You will see simple manipulation tips in blender for beginners.</p>
       <button id="download-btn">DOWNLOAD</button>
     </div>
   </main>
@@ -123,10 +123,10 @@
   </footer>
   <script>
     document.getElementById('download-btn').addEventListener('click', () => {
-      const videoUrl = 'path/to/your/video.mp4'; // Update with the correct video URL
+      const videoUrl = 'https://github.com/inzozimedia/M.E.D-Videos/raw/main/video/orientation.mp4'; // Update with the correct video URL
       const link = document.createElement('a');
       link.href = videoUrl;
-      link.download = 'VideoFilename.mp4'; // Specify the file name for the download
+      link.download = 'orientation by M.E.D videos.mp4'; // Specify the file name for the download
       link.style.display = 'none'; // Hide the link
       document.body.appendChild(link); // Append the link to the body
       link.click(); // Simulate a click to start the download
